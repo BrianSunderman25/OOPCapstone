@@ -3,16 +3,16 @@
 
 using namespace std;
 
-class suggestion :public mealData
+class suggestion : mealData
 {
 private:
-	string singleSuggestion;
-	int similarNum;
 	
 
 public:
 	suggestion();
-	string getSuggestion(mealData);
+
+	mealData singleSuggestion(mealData);
+	
 
 
 	virtual ~suggestion();
