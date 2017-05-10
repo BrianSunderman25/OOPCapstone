@@ -6,6 +6,22 @@ mealData::mealData()
 {
 }
 
+/*
+copy constructor
+*/
+mealData::mealData(const mealData & obj)
+{
+	name = obj.name;
+	numIngredients = obj.numIngredients;
+	calories = obj.calories;
+	sugar = obj.sugar;
+	fat = obj.fat;
+	protein = obj.protein;
+	saturatedFat = obj.saturatedFat;
+	sodium = obj.sodium;
+
+}
+
 void mealData::insertMeal(mealData newMeal)
 {
 	mealList.push_back(newMeal);

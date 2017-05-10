@@ -7,10 +7,13 @@ suggestion::suggestion()
 
 }
 
-//returns a meal that is similar to the entered meal.
+/*
+returns a meal that is similar to the entered meal.
+*/
 mealData suggestion::singleSuggestion(mealData inputMeal)
 {
-	mealData suggestedMeal;
+	
+	mealData currentHighest;
 	int maxSimilar = 0;
 
 	int mealListSize = mealList.size();
@@ -31,12 +34,29 @@ mealData suggestion::singleSuggestion(mealData inputMeal)
 
 		if (similarNum > maxSimilar)
 		{
-			suggestedMeal = mealList[i];
+			currentHighest = mealList[i];
+			
 		}
+
+		
 	}
 
-	return suggestedMeal;
+	return currentHighest;
 }
+
+//this method is going to take the inputted meal and give multiple suggestions based on similarities
+void suggestion::dailySuggestion(mealData input)
+{
+	//to avoid duplicates
+	first = singleSuggestion(input);
+
+	second = singleSuggestion(first);
+
+	third = singleSuggestion(second);
+
+	
+}
+
 
 //takes meals and shows other meals that use similar ingredients
 

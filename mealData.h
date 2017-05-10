@@ -10,14 +10,19 @@ private:
 public:
 	mealData();
 
+	//copy constructor
+	mealData(const mealData &obj);
+
 	vector<mealData> mealList;
 
-	//ingredient list has been inherited
+	//ingredient list that the meal has
 	vector<ingredientData> ingredientList;
 
+	//puts a meal in the vector
 	void insertMeal(mealData);
 
-	string name;
+	//values for the meal
+	string meal_name;
 	int numIngredients;
 	int calories;
 	int sugar;
@@ -26,6 +31,7 @@ public:
 	int saturatedFat;
 	int sodium;
 
+	//functions that set 
 	void setName(string);
 	void setNumIngredients(int);
 	void setCalories(int);
@@ -35,6 +41,7 @@ public:
 	void setSaturatedFat(int);
 	void setSodium(int);
 
+	//pushes an ingredient into the ingredient list
 	void addIngredient(string, string);
 
 	virtual ~mealData();
